@@ -104,3 +104,8 @@ Route::put('user/{id}', [ManagementUserController::class, 'update']);
 Route::delete('user/{id}', [ManagementUserController::class, 'destroy']);
 
 Route::get('/home', [ManagementUserController::class, 'index']);
+
+//acara 6
+Route::get("/home", function(){
+    return view("home");
+});

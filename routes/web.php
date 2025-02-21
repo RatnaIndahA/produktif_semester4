@@ -4,6 +4,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController; 
 use App\Http\Controllers\ManagementUserController; 
+use App\Http\Controllers\Frontend\HomeController;
+
 
 
 /*
@@ -108,4 +110,9 @@ Route::get('/home', [ManagementUserController::class, 'index']);
 //acara 6
 Route::get("/home", function(){
     return view("home");
+});
+
+//acara 7 8 
+Route::group(['namespace'=>'Frontend'], function(){
+    Route::resource('/home1', HomeController::class);
 });
